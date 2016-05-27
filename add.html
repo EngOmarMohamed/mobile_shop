@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset='utf-8'/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/angular.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <title>
+        Add Mobile
+    </title>
+
+
+</head>
+
+
+<body ng-app="MyApp">
+
+<div ng-controller="MainCtrl as ctrl">
+    <div class="container">
+        <div class="jumbotron  ">
+            <h3 class=" "><strong class="text-primary">Mobile</strong> <strong class="text-danger">Shop</strong> <span
+                    class="text-danger glyphicon glyphicon-shopping-cart"></span>
+            </h3>
+
+        </div>
+        <form name="add_form" ng-submit="add_form.$valid && ctrl.submit()">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div>
+                        <label for="model">Model:</label>
+                        <input id="model" type="text" name="model" ng-model="ctrl.mobile.model" required/><br/>
+                        <span ng-show="add_form.model.$dirty && add_form.model.$error.required">*this field is required</span><br/>
+                    </div>
+                    <div>
+                        <label for="year">Manufacture year:</label>
+                        <input id="year" type="number" min="1900" name="year" ng-model="ctrl.mobile.year" required/>
+                        <span ng-show="add_form.year.$dirty && add_form.year.$error.required">*this field is required</span><br/>
+                        <span ng-show="add_form.year.$dirty && add_form.year.$error.number">*this field should be number</span><br/>
+                        <span ng-show="add_form.year.$dirty && add_form.year.$error.min">*minimum value is 1900</span><br/>
+                    </div>
+                    <div>
+                        <label for="brand">Brand:</label>
+                        <select id="brand" name="brand" ng-model="ctrl.mobile.brand">
+                            <option value="​Sony">​Sony</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Apple">Apple</option>
+                            <option value="Nokia">Nokia</option>
+                            <option value="LG">LG</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="memory">Memory:</label>
+                        <select id="memory" name="memory" ng-model="ctrl.mobile.memory">
+                            <option value="16GB">16GB</option>
+                            <option value="32GB">32GB</option>
+                            <option value="64GB">64GB</option>
+                            <option value="128GB">128GB</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <table style="width: 100%; border: solid black;">
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="options[]" value="dual_sim"/>Dual SIM
+                            </td>
+                            <td>
+                                Screen
+                            </td>
+                            <td>
+                                <input type="radio" name="screen" value="4"/>4"
+                            </td>
+                            <td>
+                                Color
+                            </td>
+                            <td>
+                                <input type="radio" name="color" value="white"/>White
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="options[]" value="NFC"/>NFC
+                            </td>
+                            <td></td>
+                            <td>
+                                <input type="radio" name="screen" value="5"/>5"
+                            </td>
+                            <td></td>
+                            <td>
+                                <input type="radio" name="color" value="black"/>Black
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="options[]" value="4G"/>4G
+                            </td>
+                            <td></td>
+                            <td>
+                                <input type="radio" name="screen" value="6"/>6"
+                            </td>
+                            <td></td>
+                            <td>
+                                <input type="radio" name="color" value="gold"/>Gold
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <input type="submit" class="btn btn-success" value="Save" ng-disabled="add_form.$invalid"/>
+                <a href="index.html" class="btn btn-default">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+
+
+</html>
+
+
