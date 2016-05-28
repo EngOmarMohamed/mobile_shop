@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
     <meta charset='utf-8'/>
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- jQuery library -->
     <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
 
-    <!-- AngularJS library -->
     <script src="js/angular.js"></script>
     <script src="js/script.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
+
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script src="https://d3js.org/d3.v4.0.0-alpha.44.min.js"></script>
+
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <title>
         Mobile Shop
     </title>
@@ -76,7 +75,8 @@
             </div>
         </div>
         <div style="border-left:solid lightgrey;" class='col-sm-4 col-md-4 col-lg-4 col-xs-4 '>
-            <svg id="visualisation" width="1000" height="500"></svg>
+            <svg id="barChart"></svg>
+            <svg id="donutChart" height="320"></svg>
         </div>
     </div>
 </div>

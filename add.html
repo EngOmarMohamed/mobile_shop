@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset='utf-8'/>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
 
     <script src="js/angular.js"></script>
     <script src="js/script.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
-    <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <title>
         Add Mobile
@@ -30,7 +30,7 @@
             </h3>
 
         </div>
-        <form name="add_form" ng-submit="add_form.$valid && ctrl.submit()">
+        <form id="add_form" name="add_form" ng-submit="add_form.$valid && ctrl.submit()">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div>

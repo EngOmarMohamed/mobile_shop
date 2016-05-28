@@ -2,12 +2,10 @@ angular.module("MyApp")
     .factory("Mob_Service", ['$filter', function ($filter) {
         return {
             "list": function () {
-                //localStorage.removeItem('mobileList')
                 return angular.fromJson(localStorage.getItem('mobileList'));
-
             },
             "add": function (mobile) {
-
+                //Add Mobile Data to Localstorage
                 var oldMobiles = angular.fromJson(localStorage.getItem('mobileList')) || [];
 
                 if (oldMobiles.length !== 0) {
@@ -26,6 +24,11 @@ angular.module("MyApp")
                 oldMobiles.push(mobile);
 
                 localStorage.setItem("mobileList", angular.toJson(oldMobiles));
+                $(':input','#add_form')
+                    .not(':button, :submit, :reset, :hidden')
+                    .val('')
+                    .removeAttr('checked')
+                    .removeAttr('selected');
                 alert("the mobile is added successfully");
 
             },
