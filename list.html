@@ -1,0 +1,51 @@
+<script src="js/charts.js"></script>
+<div class="row">
+    <div class='col-sm-8 col-md-8 col-lg-8 col-xs-8 '>
+
+        <div style="float: right;">
+            <a href="add.html" class="btn btn-primary">Add New Mobile</a>
+        </div>
+        <div>
+            <label>Search by:</label>
+
+            <div>
+                <label for="search_model">Model:</label>
+                <input id="search_model" ng-model="search.model"/>
+            </div>
+            <div>
+                <label for="search_brand">Brand:</label>
+                <select id="search_brand" ng-model="search.brand">
+                    <option value="">All</option>
+                    <option value="​Sony">​Sony</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Nokia">Nokia</option>
+                    <option value="LG">LG</option>
+                </select>
+            </div>
+        </div>
+        <table class="table table-hover" ng-controller="MainCtrl as ctrl">
+            <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in ctrl.list  | filter:search" class="showMobile" id="{{item.id}}">
+                <td>{{item.brand}}</td>
+                <td>{{item.model}}</td>
+                <td>{{item.year}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div id="mobileInfo">
+
+        </div>
+    </div>
+    <div style="border-left:solid lightgrey;" class='col-sm-4 col-md-4 col-lg-4 col-xs-4 '>
+        <svg id="barChart"></svg>
+        <svg id="donutChart" height="320"></svg>
+    </div>
+</div>

@@ -15,6 +15,7 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.js"></script>
     <title>
         Mobile Shop
     </title>
@@ -30,55 +31,22 @@
         </h3>
 
     </div>
-    <div class="row">
-        <div class='col-sm-8 col-md-8 col-lg-8 col-xs-8 '>
-            <div style="float: right;">
-                <a href="add.html" class="btn btn-primary">Add New Mobile</a>
-            </div>
-            <div>
-                <label>Search by:</label>
-
-                <div>
-                    <label for="search_model">Model:</label>
-                    <input id="search_model" ng-model="search.model"/>
-                </div>
-                <div>
-                    <label for="search_brand">Brand:</label>
-                    <select id="search_brand" ng-model="search.brand">
-                        <option value="">All</option>
-                        <option value="​Sony">​Sony</option>
-                        <option value="Samsung">Samsung</option>
-                        <option value="Apple">Apple</option>
-                        <option value="Nokia">Nokia</option>
-                        <option value="LG">LG</option>
-                    </select>
-                </div>
-            </div>
-            <table class="table table-hover" ng-controller="MainCtrl as ctrl">
-                <thead>
-                <tr>
-                    <th>Brand</th>
-                    <th>Model</th>
-                    <th>Year</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="item in ctrl.list  | filter:search" class="showMobile" id="{{item.id}}">
-                    <td>{{item.brand}}</td>
-                    <td>{{item.model}}</td>
-                    <td>{{item.year}}</td>
-                </tr>
-                </tbody>
-            </table>
-            <div id="mobileInfo">
-
-            </div>
+    <nav class="navbar navbar-default " style='background-color:dodgerblue;padding-right: 20px'>
+        <div class="navbar-header">
+            <button class='btn navbar-toggle' data-toggle='collapse' data-target='#my-nav'>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
         </div>
-        <div style="border-left:solid lightgrey;" class='col-sm-4 col-md-4 col-lg-4 col-xs-4 '>
-            <svg id="barChart"></svg>
-            <svg id="donutChart" height="320"></svg>
-        </div>
-    </div>
+        <ul class="nav navbar-nav collapse navbar-collapse" id='my-nav'>
+            <li><a class="navbar-brand" href="#ListMobiles"> Home </a></li>
+            <li><a class="navbar-brand" href="#AddMobile"> Add New Mobile </a></li>
+        </ul>
+    </nav>
+
+    <div ng-view></div>
+
 </div>
 
 
